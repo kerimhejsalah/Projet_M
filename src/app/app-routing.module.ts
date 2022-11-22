@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { AuthComponent } from './auth/auth.component';
+import { MatdialogauthComponent } from './matdialogauth/matdialogauth.component';
 const routes: Routes = [
 { path: '', redirectTo: '/auth', pathMatch: 'full' },
-{path:'auth',loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
-{path:'layouts',loadChildren:()=>import('./layouts/layouts.module').then(m=>m.LayoutsModule)},
+{path:'auth',component:AuthComponent},
+
 ];
 
 @NgModule({
