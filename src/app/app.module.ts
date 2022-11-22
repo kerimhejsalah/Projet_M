@@ -7,8 +7,9 @@ import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatdialogauthComponent } from './matdialogauth/matdialogauth.component';
+import {MatDialogModule} from '@angular/material/dialog';
 // addd
-@NgModule({ 
+@NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
@@ -20,6 +21,7 @@ import { MatdialogauthComponent } from './matdialogauth/matdialogauth.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
