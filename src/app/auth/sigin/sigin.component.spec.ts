@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OffreDisponibleComponent } from './offre-disponible.component';
+import { SiginComponent } from './sigin.component';
 
-describe('OffreDisponibleComponent', () => {
-  let component: OffreDisponibleComponent;
-  let fixture: ComponentFixture<OffreDisponibleComponent>;
+describe('SiginComponent', () => {
+  let component: SiginComponent;
+  let fixture: ComponentFixture<SiginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OffreDisponibleComponent ]
+      declarations: [ SiginComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OffreDisponibleComponent);
+    fixture = TestBed.createComponent(SiginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
