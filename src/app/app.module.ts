@@ -13,6 +13,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ProfilcondidatComponent } from './profilcondidat/profilcondidat.component';
+import { ProfilentepriseComponent } from './profilenteprise/profilenteprise.component';
 // addd
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     HeaderComponent,
     FooterComponent,
     MatdialogauthComponent,
+    ProfilcondidatComponent,
+    ProfilentepriseComponent,
   ],
   imports: [
     BrowserModule,
