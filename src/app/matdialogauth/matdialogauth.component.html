@@ -2,8 +2,8 @@
 <div style= "height : 500px" >
 <h1 mat-dialog-title>Bienvenu !!</h1>
 <div mat-dialog-content>Veuillez se connecter</div>
-<mat-tab-group>
-    <mat-tab label="Login"> <mat-tab-group>
+<mat-tab-group (selectedTabChange)="yourFn($event)">
+    <mat-tab label="Login" > <mat-tab-group (selectedTabChange)="loginFn($event)">
         <mat-tab label="Entreprise"> <div class="card">
           <div class="card-body">
               <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -51,7 +51,7 @@
         </div> </mat-tab>
 
       </mat-tab-group></mat-tab>
-    <mat-tab label="Register"><mat-tab-group>
+    <mat-tab label="Register"><mat-tab-group (selectedTabChange)="registerFn($event)">
         <mat-tab label="Entreprise"> 
             <div class="card">
                 <div class="card-body" style= "height : 500px">

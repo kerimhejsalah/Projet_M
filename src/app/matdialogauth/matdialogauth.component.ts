@@ -50,4 +50,13 @@ export class MatdialogauthComponent implements OnInit {
   }
   f(): void { }
   onSubmit(): void {}
+ yourFn(event: any): void{
+    console.log(event.tab.textLabel);
+}
+loginFn(event: any): void{
+  console.log(event.tab.textLabel);
+}
+registerFn(event: any): void{
+  console.log(event.tab.textLabel);
+}
 }
