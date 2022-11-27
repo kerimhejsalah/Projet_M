@@ -2,17 +2,75 @@
 <div mat-dialog-content>You Ah</div>
 <mat-tab-group>
     <mat-tab label="First"> <mat-tab-group>
-        <mat-tab label="First"> Content 1 </mat-tab>
+        <mat-tab label="First"> <div class="card">
+          <h4 class="card-header">Login</h4>
+          <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                          <div *ngIf="f.username.errors.required">Username is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">Password is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <button [disabled]="loading" class="btn btn-primary">
+                          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                          Login
+                      </button>
+                      <a routerLink="../register" class="btn btn-link">Register</a>
+                  </div>
+              </form>
+          </div>
+      </div></mat-tab>
         <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
       </mat-tab-group></mat-tab>
     <mat-tab label="Second"><mat-tab-group>
         <mat-tab label="First"> Content 1 </mat-tab>
         <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
       </mat-tab-group> </mat-tab>
   </mat-tab-group>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
 </div>
- 
+<!-- <p>
+  Implementation of mat-tab-group for
+  center style and for default theme
+  </p>
+  
+  <mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Home">Home Content</mat-tab>
+  <mat-tab label="Overview">Overview Content</mat-tab>
+  </mat-tab-group>
+  <br>
+  
+  
+  <p>
+  Implementation of mat-tab-group for center
+  style and for primary theme
+  </p>
+  
+  <mat-tab-group mat-align-tabs="center" backgroundColor="primary">
+  <mat-tab label="Home">Home Content</mat-tab>
+  <mat-tab label="Overview">Overview Content</mat-tab>
+  </mat-tab-group>
+  <br>
+  
+  
+  <p>
+  Implementation of mat-tab-group for center
+  style and for accent theme
+  </p>
+  
+  <mat-tab-group mat-align-tabs="center" backgroundColor="accent">
+  <mat-tab label="Home">Home Content</mat-tab>
+  <mat-tab label="Overview">Overview Content</mat-tab>
+  </mat-tab-group>
+   -->
