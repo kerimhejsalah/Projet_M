@@ -1,18 +1,149 @@
-<h1 mat-dialog-title>Hello Marwa</h1>
-<div mat-dialog-content>You Ah</div>
+<!--class="scroller" #scroller1-->
+<div style= "height : 500px" >
+<h1 mat-dialog-title>Bienvenu !!</h1>
+<div mat-dialog-content>Veuillez se connecter</div>
 <mat-tab-group>
-    <mat-tab label="First"> <mat-tab-group>
-        <mat-tab label="First"> Content 1 </mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Login"> <mat-tab-group>
+        <mat-tab label="Entreprise"> <div class="card">
+          <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                  <div class="form-group" >
+                      <label for="username">Username</label>
+                      <input type="text" formControlName="username" class="form-control" />
+                      
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" formControlName="password" class="form-control" />
+                      
+                  </div>
+                  <div class="form-group">
+                      <button [disabled]="loading" class="btn btn-primary">
+                          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                          Login
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div> </mat-tab>
+
+        <mat-tab label="Candidat"> <div class="card">
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group" >
+                        <label for="username">Email</label>
+                        <input type="text" formControlName="username" class="form-control" />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" formControlName="password" class="form-control" />
+                        
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Connexion
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div> </mat-tab>
+
       </mat-tab-group></mat-tab>
-    <mat-tab label="Second"><mat-tab-group>
-        <mat-tab label="First"> Content 1 </mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Register"><mat-tab-group>
+        <mat-tab label="Entreprise"> 
+            <div class="card">
+                <div class="card-body" style= "height : 500px">
+                    <form [formGroup]="registerEntreprise" (ngSubmit)="onSubmit()">
+                        <div class="form-group" >
+                            <label for="username">nom</label>
+                            <input type="text" formControlName="name" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">Domain</label>
+                            <input type="text" formControlName="domain" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">discription</label>
+                            <input type="text" formControlName="discription" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">Email</label>
+                            <input type="text" formControlName="email" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" formControlName="password" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <button [disabled]="loading" class="btn btn-primary">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                Connexion
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+        </mat-tab>
+        <mat-tab label="Candidat"> 
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="registerCandidat" (ngSubmit)="onSubmit()">
+                        <div class="form-group" >
+                            <label for="username">prenom</label>
+                            <input type="text" formControlName="firstname" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">nom</label>
+                            <input type="text" formControlName="lastname" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">Niveau</label>
+                            <input type="text" formControlName="niveau" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">Specialite</label>
+                            <input type="text" formControlName="specialite" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group" >
+                            <label for="username">Email</label>
+                            <input type="text" formControlName="email" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" formControlName="password" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Numero</label>
+                            <input type="password" formControlName="numero" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <button [disabled]="loading" class="btn btn-primary">
+                                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                Connexion
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+        </mat-tab>
+   
       </mat-tab-group> </mat-tab>
   </mat-tab-group>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button mat-dialog-close>Fermer</button>
 </div>
- 
+</div>
